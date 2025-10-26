@@ -1,4 +1,8 @@
-import axios, { AxiosError, HttpStatusCode, type AxiosRequestConfig } from "axios";
+import axios, {
+  AxiosError,
+  HttpStatusCode,
+  type AxiosRequestConfig,
+} from "axios";
 
 import type { ApiErrorResponseRecord } from "./types/errors";
 
@@ -6,7 +10,7 @@ export type Signal = AxiosRequestConfig["signal"];
 
 export type ApiResponse<T> = T | AxiosError<unknown, unknown>;
 
-const baseUrl = import.meta.env.PUBLIC_API_URL || "https://estitor-backend-api-prod.webbcrew.dev/";
+const baseUrl = import.meta.env.PUBLIC_API_URL;
 
 export const axiosInstance = axios.create({
   baseURL: baseUrl,
@@ -57,7 +61,9 @@ axiosInstance.interceptors.response.use(
           window.location.href = "/";
         }
 
-        return Promise.reject(new Error("Authentication failed. Redirecting to login."));
+        return Promise.reject(
+          new Error("Authentication failed. Redirecting to login.")
+        );
       }
 
       case HttpStatusCode.Forbidden:
