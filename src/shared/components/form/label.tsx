@@ -1,8 +1,9 @@
 import type { FC, ReactNode } from "react";
 
-import { classNameManager } from "../../lib/css";
-
 import { RequiredAsterisk } from "./required-asterisk";
+
+import { classNameManager } from "@/shared/lib/css";
+
 
 const { joinClasses } = classNameManager;
 

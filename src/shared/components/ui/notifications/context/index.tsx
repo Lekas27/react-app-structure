@@ -3,9 +3,10 @@ import { createContext, useCallback, useContext, useMemo } from "react";
 import type { ToastContentProps, ToastOptions } from "react-toastify";
 import { toast, ToastContainer } from "react-toastify";
 
-import { NotificationItem } from "../components/item";
-
 import type { NotificationConfig } from "./types/notification";
+
+import { NotificationItem } from "@/shared/components/ui/notifications/components/item";
+
 
 type NotificationContextValue = {
   /** Shows a success notification with green styling */

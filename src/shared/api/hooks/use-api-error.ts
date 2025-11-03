@@ -1,13 +1,13 @@
 import { AxiosError } from "axios";
 import { useCallback } from "react";
 
-import { useNotifications } from "../../components/ui/notifications/context";
-import type { NotificationConfig } from "../../components/ui/notifications/context/types/notification";
 import type {
   ApiErrorResponseRecord,
   ApiMultipleErrorMessagesResponseRecord,
   ApiResponseSingleErrorMessageRecord,
-} from "../types/errors";
+} from "@/shared/api/types/errors";
+import { useNotifications } from "@/shared/components/ui/notifications/context";
+import type { NotificationConfig } from "@/shared/components/ui/notifications/context/types/notification";
 
 type ResponseRecord = {
   handleError: (
