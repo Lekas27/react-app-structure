@@ -1,13 +1,16 @@
-import path from "path"; // ← import Node path module
-
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, type PluginOption } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const shouldUseChecker = true;
 
 export default defineConfig(async () => {
-  const plugins: PluginOption[] = [react(), tailwindcss()];
+  const plugins: PluginOption[] = [
+    react(),
+    tailwindcss(),
+    tsconfigPaths(), // This reads tsconfig paths and applies them
+  ];
 
   if (shouldUseChecker) {
     const { checker } = await import("vite-plugin-checker");
@@ -33,10 +36,5 @@ export default defineConfig(async () => {
 
   return {
     plugins,
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src"), // <-- maps @ to ./src
-      },
-    },
   };
 });
