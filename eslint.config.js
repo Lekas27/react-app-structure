@@ -110,10 +110,7 @@ export default tseslint.config(
         "error",
         { namedComponents: "arrow-function" },
       ],
-      "react/jsx-filename-extension": [
-        "error",
-        { extensions: [".tsx"], allow: "as-needed" },
-      ],
+      "react/jsx-filename-extension": "off",
       "react/jsx-curly-brace-presence": [
         "error",
         { props: "never", children: "never" },
