@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { type FC } from "react";
 import type { ToastContentProps } from "react-toastify";
+
 import { classNameManager } from "@/shared/lib/css.ts";
 
 const { joinClasses } = classNameManager;

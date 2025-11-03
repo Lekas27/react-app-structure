@@ -1,6 +1,7 @@
 import path from "path"; // ← import Node path module
-import react from "@vitejs/plugin-react-swc";
+
 import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react-swc";
 import { defineConfig, type PluginOption } from "vite";
 
 const shouldUseChecker = true;
