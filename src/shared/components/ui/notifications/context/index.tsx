@@ -3,9 +3,9 @@ import { createContext, useCallback, useContext, useMemo } from "react";
 import type { ToastContentProps, ToastOptions } from "react-toastify";
 import { toast, ToastContainer } from "react-toastify";
 
-import type { NotificationConfig } from "./types/notification";
+import { NotificationItem } from "../components/item";
 
-import { NotificationItem } from "@/apps/agent/src/components/ui/notifications/components/item";
+import type { NotificationConfig } from "./types/notification";
 
 type NotificationContextValue = {
   /** Shows a success notification with green styling */
@@ -28,7 +28,9 @@ type NotificationContextValue = {
   update: (id: string, config: Partial<NotificationConfig>) => void;
 };
 
-const NotificationContext = createContext<NotificationContextValue | null>(null);
+const NotificationContext = createContext<NotificationContextValue | null>(
+  null
+);
 
 const { Provider } = NotificationContext;
 
@@ -39,7 +41,10 @@ type Props = {
 };
 
 /** Notification provider component that manages global notification state and rendering */
-export const NotificationProvider: FC<Props> = ({ children, defaultOptions = {} }) => {
+export const NotificationProvider: FC<Props> = ({
+  children,
+  defaultOptions = {},
+}) => {
   /** Default notification configuration */
   const baseConfig: Partial<NotificationConfig> = useMemo(
     () => ({
@@ -63,7 +68,10 @@ export const NotificationProvider: FC<Props> = ({ children, defaultOptions = {} 
       return {
         toastId: config.id,
         position: mergedConfig.position || "top-right",
-        autoClose: mergedConfig.autoClose === false ? false : (mergedConfig.autoClose ?? 5000),
+        autoClose:
+          mergedConfig.autoClose === false
+            ? false
+            : mergedConfig.autoClose ?? 5000,
         hideProgressBar: mergedConfig.hideProgressBar,
         closeOnClick: mergedConfig.closeOnClick,
         pauseOnHover: mergedConfig.pauseOnHover,
@@ -104,7 +112,9 @@ export const NotificationProvider: FC<Props> = ({ children, defaultOptions = {} 
 
   /** Helper to normalize config input (string or object) */
   const normalizeConfig = useCallback(
-    (config: Omit<NotificationConfig, "variant"> | string): Omit<NotificationConfig, "variant"> => {
+    (
+      config: Omit<NotificationConfig, "variant"> | string
+    ): Omit<NotificationConfig, "variant"> => {
       return typeof config === "string" ? { message: config } : config;
     },
     []
@@ -201,7 +211,17 @@ export const NotificationProvider: FC<Props> = ({ children, defaultOptions = {} 
       dismissAll,
       update,
     }),
-    [success, error, info, warning, loading, custom, dismiss, dismissAll, update]
+    [
+      success,
+      error,
+      info,
+      warning,
+      loading,
+      custom,
+      dismiss,
+      dismissAll,
+      update,
+    ]
   );
 
   return (
@@ -228,7 +248,9 @@ export const useNotifications = (): NotificationContextValue => {
   const context = useContext(NotificationContext);
 
   if (!context) {
-    throw new Error("useNotifications must be used within a NotificationProvider");
+    throw new Error(
+      "useNotifications must be used within a NotificationProvider"
+    );
   }
 
   return context;
