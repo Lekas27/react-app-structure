@@ -6,18 +6,13 @@ import axios, {
 
 import type { ApiErrorResponseRecord } from "./types/errors";
 
+import { API_CONFIG } from "@/shared/config/api/api-config";
+
 export type Signal = AxiosRequestConfig["signal"];
 
 export type ApiResponse<T> = T | AxiosError<unknown, unknown>;
 
-const baseUrl = import.meta.env.PUBLIC_API_URL;
-
-export const axiosInstance = axios.create({
-  baseURL: baseUrl,
-  xsrfCookieName: "csrftoken",
-  xsrfHeaderName: "X-CSRFToken",
-  withCredentials: false,
-});
+export const axiosInstance = axios.create(API_CONFIG);
 
 export const callApi = async <Success, ErrorShape = ApiErrorResponseRecord>(
   config: AxiosRequestConfig
