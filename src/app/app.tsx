@@ -1,11 +1,15 @@
 import { useState } from "react";
 
+import { CampingNavbar } from "@/widgets/navbar/ui";
+
 export const App = () => {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div></div>
+      <div className="w-full absolute top-0 left-0 z-50">
+        <CampingNavbar />
+      </div>
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
