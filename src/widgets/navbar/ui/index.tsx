@@ -8,13 +8,13 @@ export const CampingNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-emerald-900 via-green-800 to-teal-900 shadow-2xl">
+    <nav className="bg-linear-to-r from-emerald-900 via-green-800 to-teal-900 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 group cursor-pointer">
             <Mountain className="h-10 w-10 text-lime-400 group-hover:text-lime-300 transition-all duration-300 group-hover:scale-110" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-lime-400 to-emerald-300 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-linear-to-r from-lime-400 to-emerald-300 bg-clip-text text-transparent">
               CampingPlaces
             </span>
           </div>
@@ -37,7 +37,7 @@ export const CampingNavbar = () => {
             <button className="px-5 py-2.5 text-lime-400 font-semibold hover:text-white border-2 border-lime-400 rounded-full hover:bg-lime-400/10 transition-all duration-300 hover:scale-105">
               Sign In
             </button>
-            <button className="px-5 py-2.5 bg-gradient-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-lime-500/50">
+            <button className="px-5 py-2.5 bg-linear-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-lime-500/50">
               Register
             </button>
           </div>
@@ -64,7 +64,7 @@ export const CampingNavbar = () => {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-2 bg-gradient-to-b from-emerald-900/95 to-green-900/95 backdrop-blur-lg">
+        <div className="px-4 pt-2 pb-6 space-y-2 bg-linear-to-b from-emerald-900/95 to-green-900/95 backdrop-blur-lg">
           <MobileNavLink href="#home">Home</MobileNavLink>
           <MobileNavLink href="#about">About Us</MobileNavLink>
           <MobileNavLink href="#contact">Contact</MobileNavLink>
@@ -79,7 +79,7 @@ export const CampingNavbar = () => {
             <button className="w-full px-5 py-3 text-lime-400 font-semibold border-2 border-lime-400 rounded-full hover:bg-lime-400/10 transition-all duration-300">
               Sign In
             </button>
-            <button className="w-full px-5 py-3 bg-gradient-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 shadow-lg">
+            <button className="w-full px-5 py-3 bg-linear-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 shadow-lg">
               Register
             </button>
           </div>
