@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, type PluginOption } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -7,6 +8,10 @@ const shouldUseChecker = true;
 
 export default defineConfig(async () => {
   const plugins: PluginOption[] = [
+    tanstackRouter({
+      target: "react",
+      autoCodeSplitting: true,
+    }),
     react(),
     tailwindcss(),
     tsconfigPaths(), // This reads tsconfig paths and applies them
