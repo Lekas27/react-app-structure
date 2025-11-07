@@ -9,8 +9,10 @@ const shouldUseChecker = true;
 export default defineConfig(async () => {
   const plugins: PluginOption[] = [
     tanstackRouter({
-      target: "react",
-      autoCodeSplitting: true,
+      routesDirectory: "./src/app/router/routes",
+      generatedRouteTree: "./src/app/router/routeTree.gen.ts",
+      routeFileIgnorePrefix: "-",
+      quoteStyle: "single",
     }),
     react(),
     tailwindcss(),
