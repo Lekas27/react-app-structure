@@ -1,11 +1,18 @@
+import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import "./styles/index.css";
-import { App } from "./app.tsx";
+import { router } from "./router";
+import { RouteSecurityProvider } from "./router/providers/router-provider";
+
+import { CampingNavbar } from "@/widgets/navbar/ui";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
-    <App />
+    <RouteSecurityProvider>
+      <CampingNavbar />
+      <RouterProvider router={router} />
+    </RouteSecurityProvider>
   </StrictMode>
 );
