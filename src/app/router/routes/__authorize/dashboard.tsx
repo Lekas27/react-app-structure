@@ -1,10 +1,10 @@
-import { createFileRoute, redirect } from '@tanstack/react-router'
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/__authorize/dashboard')({
+export const Route = createFileRoute("/__authorize/dashboard")({
   beforeLoad: ({ context }) => {
     if (!context.isAuthenticated) {
-      throw redirect({ to: '/public/login' })
+      throw redirect({ to: "/login" });
     }
   },
   component: () => <div>📊 Dashboard - Authorized Only</div>,
-})
+});
