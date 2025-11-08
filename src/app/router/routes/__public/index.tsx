@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { CampingHomepage } from "@/pages/home";
+import { CampingNavbar } from "@/widgets/navbar/ui";
+
 export const Route = createFileRoute("/__public/")({
-  component: () => <div>🏠 Home Page - Public Access</div>,
+  component: () => <CampingNavbar element={<CampingHomepage />} />,
 });

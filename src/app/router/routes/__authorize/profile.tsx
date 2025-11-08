@@ -1,10 +1,14 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 
+import { CampingNavbar } from "@/widgets/navbar/ui";
+
 export const Route = createFileRoute("/__authorize/profile")({
   beforeLoad: ({ context }) => {
     if (!context.isAuthenticated) {
       throw redirect({ to: "/login" });
     }
   },
-  component: () => <div>👤 Profile - Authorized Only</div>,
+  component: () => (
+    <CampingNavbar element={<div>👤 Profile - Authorized Only</div>} />
+  ),
 });
