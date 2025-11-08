@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as _publicIndexRouteImport } from './routes/__public/index'
 import { Route as _publicRegisterRouteImport } from './routes/__public/register'
 import { Route as _publicLoginRouteImport } from './routes/__public/login'
+import { Route as _publicContactUsRouteImport } from './routes/__public/contact-us'
+import { Route as _publicAboutUsRouteImport } from './routes/__public/about-us'
 import { Route as _authorizeProfileRouteImport } from './routes/__authorize/profile'
 import { Route as _authorizeDashboardRouteImport } from './routes/__authorize/dashboard'
 
@@ -30,6 +32,16 @@ const _publicLoginRoute = _publicLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const _publicContactUsRoute = _publicContactUsRouteImport.update({
+  id: '/__public/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const _publicAboutUsRoute = _publicAboutUsRouteImport.update({
+  id: '/__public/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const _authorizeProfileRoute = _authorizeProfileRouteImport.update({
   id: '/__authorize/profile',
   path: '/profile',
@@ -44,6 +56,8 @@ const _authorizeDashboardRoute = _authorizeDashboardRouteImport.update({
 export interface FileRoutesByFullPath {
   '/dashboard': typeof _authorizeDashboardRoute
   '/profile': typeof _authorizeProfileRoute
+  '/about-us': typeof _publicAboutUsRoute
+  '/contact-us': typeof _publicContactUsRoute
   '/login': typeof _publicLoginRoute
   '/register': typeof _publicRegisterRoute
   '/': typeof _publicIndexRoute
@@ -51,6 +65,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/dashboard': typeof _authorizeDashboardRoute
   '/profile': typeof _authorizeProfileRoute
+  '/about-us': typeof _publicAboutUsRoute
+  '/contact-us': typeof _publicContactUsRoute
   '/login': typeof _publicLoginRoute
   '/register': typeof _publicRegisterRoute
   '/': typeof _publicIndexRoute
@@ -59,19 +75,37 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/__authorize/dashboard': typeof _authorizeDashboardRoute
   '/__authorize/profile': typeof _authorizeProfileRoute
+  '/__public/about-us': typeof _publicAboutUsRoute
+  '/__public/contact-us': typeof _publicContactUsRoute
   '/__public/login': typeof _publicLoginRoute
   '/__public/register': typeof _publicRegisterRoute
   '/__public/': typeof _publicIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/dashboard' | '/profile' | '/login' | '/register' | '/'
+  fullPaths:
+    | '/dashboard'
+    | '/profile'
+    | '/about-us'
+    | '/contact-us'
+    | '/login'
+    | '/register'
+    | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/dashboard' | '/profile' | '/login' | '/register' | '/'
+  to:
+    | '/dashboard'
+    | '/profile'
+    | '/about-us'
+    | '/contact-us'
+    | '/login'
+    | '/register'
+    | '/'
   id:
     | '__root__'
     | '/__authorize/dashboard'
     | '/__authorize/profile'
+    | '/__public/about-us'
+    | '/__public/contact-us'
     | '/__public/login'
     | '/__public/register'
     | '/__public/'
@@ -80,6 +114,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   _authorizeDashboardRoute: typeof _authorizeDashboardRoute
   _authorizeProfileRoute: typeof _authorizeProfileRoute
+  _publicAboutUsRoute: typeof _publicAboutUsRoute
+  _publicContactUsRoute: typeof _publicContactUsRoute
   _publicLoginRoute: typeof _publicLoginRoute
   _publicRegisterRoute: typeof _publicRegisterRoute
   _publicIndexRoute: typeof _publicIndexRoute
@@ -108,6 +144,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof _publicLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/__public/contact-us': {
+      id: '/__public/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof _publicContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/__public/about-us': {
+      id: '/__public/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof _publicAboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/__authorize/profile': {
       id: '/__authorize/profile'
       path: '/profile'
@@ -128,6 +178,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   _authorizeDashboardRoute: _authorizeDashboardRoute,
   _authorizeProfileRoute: _authorizeProfileRoute,
+  _publicAboutUsRoute: _publicAboutUsRoute,
+  _publicContactUsRoute: _publicContactUsRoute,
   _publicLoginRoute: _publicLoginRoute,
   _publicRegisterRoute: _publicRegisterRoute,
   _publicIndexRoute: _publicIndexRoute,

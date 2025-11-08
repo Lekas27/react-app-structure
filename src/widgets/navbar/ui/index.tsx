@@ -76,23 +76,29 @@ export const CampingNavbar: FC<Props> = ({ element }) => {
           }`}
         >
           <div className="px-4 pt-2 pb-6 space-y-2 bg-linear-to-b from-emerald-900/95 to-green-900/95 backdrop-blur-lg">
-            <MobileNavLink href="#home">Home</MobileNavLink>
-            <MobileNavLink href="#about">About Us</MobileNavLink>
-            <MobileNavLink href="#contact">Contact</MobileNavLink>
-            <MobileNavLink href="#places">
+            <MobileNavLink to="/">Home</MobileNavLink>
+            <MobileNavLink to="/about-us">About Us</MobileNavLink>
+            <MobileNavLink to="/contact-us">Contact</MobileNavLink>
+            <MobileNavLink to="/camping-sites">
               <div className="flex items-center space-x-2">
                 <Tent className="h-4 w-4" />
                 <span>Camping Places</span>
               </div>
             </MobileNavLink>
 
-            <div className="pt-4 space-y-2">
-              <button className="w-full px-5 py-3 text-lime-400 font-semibold border-2 border-lime-400 rounded-full hover:bg-lime-400/10 transition-all duration-300">
+            <div className="pt-4 space-y-2 ">
+              <MobileNavLink
+                to="/login"
+                className="w-full px-5 py-3 text-lime-400 font-semibold border-2 border-lime-400 rounded-full hover:bg-lime-400/10 transition-all duration-300 text-center"
+              >
                 Sign In
-              </button>
-              <button className="w-full px-5 py-3 bg-linear-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 shadow-lg">
+              </MobileNavLink>
+              <MobileNavLink
+                to="/register"
+                className="w-full px-5 py-3 bg-linear-to-r from-lime-500 to-emerald-500 text-white font-semibold rounded-full hover:from-lime-400 hover:to-emerald-400 transition-all duration-300 shadow-lg text-center"
+              >
                 Register
-              </button>
+              </MobileNavLink>
             </div>
           </div>
         </div>
