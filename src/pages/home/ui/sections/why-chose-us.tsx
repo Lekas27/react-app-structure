@@ -1,5 +1,6 @@
 import { Shield, Users, Map, MessageCircle } from "lucide-react";
 
+import { FeatureCard } from "@/pages/home/ui/components/feature-card";
 import { Paragraph } from "@/shared/components/ui/typography/paragraph";
 import { Title } from "@/shared/components/ui/typography/title";
 
@@ -49,23 +50,12 @@ export const WhyChoseUsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div
+            <FeatureCard
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300"
-            >
-              <div className="w-16 h-16 bg-linear-to-br from-lime-400 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-4">
-                {feature.icon}
-              </div>
-              <Title
-                className="text-xl font-bold text-gray-900! mb-3"
-                level={3}
-              >
-                {feature.title}
-              </Title>
-              <Paragraph className="text-gray-600! leading-relaxed">
-                {feature.description}
-              </Paragraph>
-            </div>
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
           ))}
         </div>
       </div>
