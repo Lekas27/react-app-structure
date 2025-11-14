@@ -1,11 +1,6 @@
-export const StatsSection = () => {
-  const stats = [
-    { number: "15,000+", label: "Camping Locations Listed" },
-    { number: "50,000+", label: "Active Community Members" },
-    { number: "4.8/5", label: "Average User Rating" },
-    { number: "120+", label: "Countries Covered" },
-  ];
+import { stats } from "@/pages/home/model/constants/stats";
 
+export const StatsSection = () => {
   return (
     <section className="py-12 bg-linear-to-b from-white to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

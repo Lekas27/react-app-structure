@@ -1,20 +1,12 @@
 import { Check, Compass } from "lucide-react";
 
+import { benefits } from "@/pages/home/model/constants/benefits";
 import { Button } from "@/shared/components/ui/button";
 import { Paragraph } from "@/shared/components/ui/typography/paragraph";
 import { Span } from "@/shared/components/ui/typography/span";
 import { Title } from "@/shared/components/ui/typography/title";
 
 export const BenefitsSection = () => {
-  const benefits = [
-    "Discover hidden camping gems",
-    "Share your favorite locations",
-    "Get detailed GPS coordinates",
-    "View high-quality photos",
-    "Read authentic camper reviews",
-    "Filter by amenities and terrain",
-  ];
-
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

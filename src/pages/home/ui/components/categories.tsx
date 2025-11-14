@@ -1,17 +1,9 @@
+import { categories } from "@/pages/home/model/constants/categories";
 import { Button } from "@/shared/components/ui/button";
 import { Paragraph } from "@/shared/components/ui/typography/paragraph";
 import { Title } from "@/shared/components/ui/typography/title";
 
 export const CategoriesSection = () => {
-  const categories = [
-    { icon: "🏔️", name: "Mountain Camping", count: "3,200+" },
-    { icon: "🏖️", name: "Beach Camping", count: "1,800+" },
-    { icon: "🌲", name: "Forest Camping", count: "4,500+" },
-    { icon: "🌵", name: "Desert Camping", count: "900+" },
-    { icon: "🏞️", name: "Lake Camping", count: "2,100+" },
-    { icon: "⛰️", name: "Valley Camping", count: "1,400+" },
-  ];
-
   return (
     <section className="py-16 bg-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

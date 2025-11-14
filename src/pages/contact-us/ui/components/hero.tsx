@@ -1,5 +1,9 @@
 import { MessageCircle, Mountain } from "lucide-react";
 
+import { Paragraph } from "@/shared/components/ui/typography/paragraph";
+import { Span } from "@/shared/components/ui/typography/span";
+import { Title } from "@/shared/components/ui/typography/title";
+
 export const HeroSection = () => {
   return (
     <section className="relative py-20 bg-linear-to-br from-emerald-900 via-green-800 to-teal-900 overflow-hidden">
@@ -9,16 +13,16 @@ export const HeroSection = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        <Title className="text-5xl md:text-6xl font-bold text-white mb-6">
           Get in
-          <span className="block bg-linear-to-r from-lime-400 to-emerald-300 bg-clip-text text-transparent mt-2">
+          <Span className="block bg-linear-to-r from-lime-400 to-emerald-300 bg-clip-text text-transparent mt-2">
             Touch
-          </span>
-        </h1>
-        <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">
+          </Span>
+        </Title>
+        <Paragraph className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">
           Have questions, feedback, or need assistance? Our team is here to help
           you make the most of your WildCamp experience.
-        </p>
+        </Paragraph>
       </div>
     </section>
   );
