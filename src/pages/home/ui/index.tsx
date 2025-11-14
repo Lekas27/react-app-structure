@@ -1,9 +1,9 @@
-import { BenefitsSection } from "./ui/sections/benefits";
-import { CategoriesSection } from "./ui/sections/categories";
-import { CTASection } from "./ui/sections/cta";
-import { HeroSection } from "./ui/sections/hero";
-import { StatsSection } from "./ui/sections/stats";
-import { WhyChoseUsSection } from "./ui/sections/why-chose-us";
+import { BenefitsSection } from "./components/benefits";
+import { CategoriesSection } from "./components/categories";
+import { CTASection } from "./components/cta";
+import { HeroSection } from "./components/hero";
+import { StatsSection } from "./components/stats";
+import { WhyChoseUsSection } from "./components/why-chose-us";
 
 export const CampingHomepage = () => {
   return (

@@ -1,11 +1,11 @@
-import { CTASection } from "./ui/sections/cta";
-import { HeroSection } from "./ui/sections/hero";
-import { MissionVisionSection } from "./ui/sections/mission-vision";
-import { OurStorySection } from "./ui/sections/our-story";
-import { StatsSection } from "./ui/sections/stats";
-import { TeamSection } from "./ui/sections/team";
-import { TimelineSection } from "./ui/sections/timeline";
-import { CoreValuesSection } from "./ui/sections/values";
+import { CTASection } from "./components/cta";
+import { HeroSection } from "./components/hero";
+import { MissionVisionSection } from "./components/mission-vision";
+import { OurStorySection } from "./components/our-story";
+import { StatsSection } from "./components/stats";
+import { TeamSection } from "./components/team";
+import { TimelineSection } from "./components/timeline";
+import { CoreValuesSection } from "./components/values";
 
 export const AboutUsSection = () => {
   return (

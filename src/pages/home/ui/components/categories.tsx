@@ -1,4 +1,4 @@
-import { CategoriesCard } from "@/pages/home/ui/components/categories-card";
+import { Button } from "@/shared/components/ui/button";
 import { Paragraph } from "@/shared/components/ui/typography/paragraph";
 import { Title } from "@/shared/components/ui/typography/title";
 
@@ -27,14 +27,26 @@ export const CategoriesSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map((category, index) => (
-            <CategoriesCard
-              key={index}
-              name={category.name}
-              count={category.count}
-              icon={category.icon}
-            />
-          ))}
+          {categories.map((category, index) => {
+            const { icon, name, count } = category;
+            return (
+              <Button
+                key={index}
+                className="group bg-white! rounded-xl! p-6! hover:shadow-xl! transition-all duration-300 hover:-translate-y-1! border-2! border-transparent! hover:border-lime-400!"
+              >
+                <div className="text-4xl mb-3">{icon}</div>
+                <Title
+                  className="font-semibold text-gray-900! mb-1 group-hover:text-emerald-600 transition-colors"
+                  level={3}
+                >
+                  {name}
+                </Title>
+                <Paragraph className="text-sm text-gray-500!">
+                  {count} locations
+                </Paragraph>
+              </Button>
+            );
+          })}
         </div>
       </div>
     </section>

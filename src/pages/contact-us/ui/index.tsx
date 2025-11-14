@@ -1,9 +1,9 @@
 import { MapPin, MessageCircle, Send, Globe, FileQuestion } from "lucide-react";
 import { useState } from "react";
 
-import { HeroSection } from "./ui/sections/hero";
-import { ContactInfoSection } from "./ui/sections/info";
-import { SupportOptionsSection } from "./ui/sections/suport-options";
+import { HeroSection } from "./components/hero";
+import { ContactInfoSection } from "./components/info";
+import { SupportOptionsSection } from "./components/suport-options";
 
 export const ContactUsSection = () => {
   const [formData] = useState({
